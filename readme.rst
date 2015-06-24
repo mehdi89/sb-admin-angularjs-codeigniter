@@ -28,12 +28,12 @@ guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide
 Installation
 ************
 
-    Clone this project or Download that ZIP file
-    Make sure you have bower, grunt-cli and npm installed globally
-    On the command prompt run the following commands
-    cd project-directory
-    npm install - bower install is ran from the postinstall
-    browse :)
+1. Clone this project or Download that ZIP file
+2. Make sure you have bower, grunt-cli and npm installed globally
+3. On the command prompt run the following commands
+4. cd project-directory
+5. npm install - bower install is ran from the postinstall
+6. browse :)
 
 
 *******
