@@ -6,7 +6,7 @@
  * @description
  * # adminPosHeader
  */
-angular.module('sbAdminApp')
+angular.module('ApsilonApp')
 	.directive('notifications',function(){
 		return {
         templateUrl:'app/scripts/directives/notifications/notifications.html',

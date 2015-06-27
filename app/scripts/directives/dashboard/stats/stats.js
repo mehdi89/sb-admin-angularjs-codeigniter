@@ -6,10 +6,10 @@
  * @description
  * # adminPosHeader
  */
-angular.module('sbAdminApp')
+angular.module('ApsilonApp')
     .directive('stats',function() {
     	return {
-  		templateUrl:'app/scripts/directives/dashboard/stats/stats.html',
+  		templateUrl:'directives/stats',
   		restrict:'E',
   		replace:true,
   		scope: {

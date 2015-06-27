@@ -1,12 +1,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name sbAdminApp.controller:MainCtrl
+ * @name ApsilonApp.controller:formCtrl
  * @description
- * # MainCtrl
- * Controller of the sbAdminApp
+ * # FormCtrl
+ * Controller of the ApsilonApp
  */
-angular.module('sbAdminApp')
+angular.module('ApsilonApp')
   .controller('FormCtrl', function($scope) {
     console.log("My Name is Mehedi"); 
     

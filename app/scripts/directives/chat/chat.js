@@ -6,7 +6,7 @@
  * @description
  * # adminPosHeader
  */
-angular.module('sbAdminApp')
+angular.module('ApsilonApp')
 	.directive('chat',function(){
 		return {
         templateUrl:'app/scripts/directives/chat/chat.html',

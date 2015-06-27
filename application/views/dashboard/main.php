@@ -1,17 +1,18 @@
 <div id="wrapper">
 
-        <!-- Navigation -->
-            
-        <header></header>
-        <!-- /.navbar-top-links -->
-        
-               
-        <!-- /.navbar-static-side -->
+    <!-- Navigation -->
 
-            <div id="page-wrapper" style="min-height: 561px;">
+    <header></header>
+    <!-- /.navbar-top-links -->
 
-                <div ui-view></div>
-                
-            </div>
-            <!-- /#page-wrapper -->
+
+    <!-- /.navbar-static-side -->
+
+    <div id="page-wrapper" style="min-height: 561px;">
+
+        <div ui-view></div>
+
     </div>
+    <!-- /#page-wrapper -->
+</div>
+
