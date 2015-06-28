@@ -23,7 +23,7 @@ angular
                     events: true,
                 });
 
-                $urlRouterProvider.otherwise('/dashboard/home');
+                $urlRouterProvider.otherwise('/dashboard/Home');
 
                 $stateProvider
                         .state('dashboard', {
@@ -76,19 +76,16 @@ angular
                                 }
                             }
                         })
-                        .state('dashboard.home', {
-                            url: '/home',
+                        .state('dashboard.Home', {
+                            url: '/Home',
                             controller: 'MainCtrl',
-                            templateUrl: 'dashboard/home',
+                            templateUrl: 'dashboard/Home',
                             resolve: {
                                 loadMyFiles: function ($ocLazyLoad) {
                                     return $ocLazyLoad.load({
                                         name: 'ApsilonApp',
                                         files: [
                                             'app/scripts/controllers/main.js',
-                                            'app/scripts/directives/timeline/timeline.js',
-                                            'app/scripts/directives/notifications/notifications.js',
-                                            'app/scripts/directives/chat/chat.js',
                                             'app/scripts/directives/dashboard/stats/stats.js',
                                             'bower_components/angular-chart.js/dist/angular-chart.min.js',
                                             'bower_components/angular-chart.js/dist/angular-chart.css'
@@ -107,9 +104,9 @@ angular
                             url: '/blank'
                         })
 
-                        .state('dashboard.chart', {
-                            templateUrl: 'chart',
-                            url: '/chart',
+                        .state('dashboard.Chart', {
+                            templateUrl: 'Chart',
+                            url: '/Chart',
                             controller: 'ChartCtrl',
                             resolve: {
                                 loadMyFile: function ($ocLazyLoad) {
@@ -179,21 +176,73 @@ angular
                                 }
                             }
                         })
+                        .state('dashboard.Button', {
+                            templateUrl: 'Ui_components/Button',
+                            url: '/Button',
+                            controller: 'ButtonCtrl',
+                            resolve: {
+                                load: function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load({
+                                        name: 'ApsilonApp',
+                                        files: ['app/scripts/controllers/ui-components/ButtonCtrl.js']
+                                    });
+                                }
+                            }
+                        })
+                        .state('dashboard.Dialog', {
+                            templateUrl: 'Ui_components/Dialog',
+                            url: '/Dialog',
+                            controller: 'DialogCtrl',
+                            resolve: {
+                                load: function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load({
+                                        name: 'ApsilonApp',
+                                        files: ['app/scripts/controllers/ui-components/DialogCtrl.js']
+                                    });
+                                }
+                            }
+                        })
+                        .state('dashboard.Forms', {
+                            templateUrl: 'Ui_components/Forms',
+                            url: '/Forms',
+                            controller: 'FormsCtrl',
+                            resolve: {
+                                load: function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load({
+                                        name: 'ApsilonApp',
+                                        files: ['app/scripts/controllers/ui-components/FormsCtrl.js']
+                                    });
+                                }
+                            }
+                        })
+                        .state('dashboard.Tabs', {
+                            templateUrl: 'Ui_components/Tabs',
+                            url: '/Tabs',
+                            controller: 'TabsCtrl',
+                            resolve: {
+                                load: function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load({
+                                        name: 'ApsilonApp',
+                                        files: ['app/scripts/controllers/ui-components/TabsCtrl.js']
+                                    });
+                                }
+                            }
+                        })
+                        .state('dashboard.Toast', {
+                            templateUrl: 'Ui_components/Toast',
+                            url: '/Toast',
+                            controller: 'ToastCtrl',
+                            resolve: {
+                                load: function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load({
+                                        name: 'ApsilonApp',
+                                        files: ['app/scripts/controllers/ui-components/ToastCtrl.js']
+                                    });
+                                }
+                            }
+                        })
 
             }])
-
-        .service('GetName', function ($compile, $rootScope, $timeout, $document, $window, $q, $templateRequest) {
-            var self = this;
-            this.Role = function (id) {
-                var arr = RoleData;
-                for (var idx = 0, length = arr.length; idx < length; idx++) {
-                    if (parseInt(id) === parseInt(arr[idx].RoleId)) {
-                        return arr[idx].RoleName;
-                    }
-                }
-            }
-
-        })
         .controller('ToastCtrl', function ($scope, $mdToast) {
             $scope.closeToast = function () {
                 $mdToast.hide();

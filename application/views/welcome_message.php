@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Apsilon App</title>
+        <title><?php echo $this->config->item('title'); ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -38,25 +38,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-
         <script src="bower_components/angular/angular.min.js"></script>
+
+        <!-- Angular Material Dependencies -->
         <script src="bower_components/angular-animate/angular-animate.min.js"></script>
         <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 
         <script src="bower_components/angular-material/angular-material.min.js"></script>
-        <!-- Angular Material Dependencies -->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>-->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>-->
-
-
-        <!-- Angular Material Javascript now available via Google CDN; version 0.10 used here -->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>-->
-        <!--    <script src="bower_components/kendo-ui-core/js/kendo.ui.core.min.js"></script>
-            <script src="bower_components/kendo-ui-core/js/kendo.core.min.js"></script>
-            <script src="bower_components/kendo-ui-core/js/kendo.angular.min.js"></script>-->
         <script src="bower_components/kendo-ui-core/js/kendo.all.min.js"></script>
-
 
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>

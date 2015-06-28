@@ -33,20 +33,36 @@ class Navigations extends MY_Controller {
             switch ($type) {
                 case 'create':
                     if ($this->auth->IsInsert) {
+                        if ($request->models[0]->ParentNavId === 0) {
+                            $request->models[0]->ParentNavId = null; 
+                        };
                         $result = $result->create('navigations', $columns, $request->models, 'NavigationId');
+                    } else {
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
                     }
                     break;
                 case 'read':
                     $result = $result->read('navigations', $columns, $request);
+
+                    foreach ($result['data'] as $key => $value) {
+                        if ($value['ParentNavId'] === null) {
+                            $value['ParentNavId'] = 0;
+                        }
+                        array_push($result['data'], $value); 
+                    }
                     break;
                 case 'update':
                     if ($this->auth->IsUpdate) {
                         $result = $result->update('navigations', $columns, $request->models, 'NavigationId');
+                    } else {
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
                     }
                     break;
                 case 'destroy':
                     if ($this->auth->IsDelete) {
                         $result = $result->destroy('navigations', $request->models, 'NavigationId');
+                    }  else {
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
                     }
                     break;
             }

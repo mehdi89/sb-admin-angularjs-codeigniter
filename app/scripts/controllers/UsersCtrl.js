@@ -7,9 +7,8 @@
  * Controller of the ApsilonApp
  */
 angular.module('ApsilonApp')
-        .controller('UsersCtrl', function ($scope, $http, $position, GetName) {
+        .controller('UsersCtrl', function ($scope, $http, $position) {
             $scope.auth = getAuth();
-//            this.init($scope);
             
             $scope.UsersGridOptions = {
                 dataSource: {

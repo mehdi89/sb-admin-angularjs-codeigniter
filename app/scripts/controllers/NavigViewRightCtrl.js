@@ -7,9 +7,8 @@
  * Controller of the ApsilonApp
  */
 angular.module('ApsilonApp')
-        .controller('NavigViewRightCtrl', function ($scope, $http, $position, GetName) {
+        .controller('NavigViewRightCtrl', function ($scope, $http, $position) {
             $scope.auth = getAuth();
-//            this.init($scope);
 
             $scope.NavigViewRightGridOptions = {
                 dataSource: {

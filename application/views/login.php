@@ -62,13 +62,13 @@
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="<?php echo site_url(); ?>/login/submit" method="post">
+                            <form role="form" action="<?php echo site_url(); ?>login/submit" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" name="username" type="text" placeholder="User name" autofocus>
+                                        <input class="form-control" name="username" required type="text" placeholder="User name" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="password" type="password" placeholder="Password" value="">
+                                        <input class="form-control" name="password" required type="password" placeholder="Password" value="">
                                     </div>
                                     <div class="checkbox">
                                         <label>

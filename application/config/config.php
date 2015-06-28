@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+$config['title'] = "Apsilon APP"; 
+$config['NoPermissionMsg'] = "You are not permitted"; 
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

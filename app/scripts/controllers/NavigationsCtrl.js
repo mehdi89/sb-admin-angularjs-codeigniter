@@ -7,10 +7,8 @@
  * Controller of the ApsilonApp
  */
 angular.module('ApsilonApp')
-        .controller('NavigationsCtrl', function ($scope, $http, $position, GetName) {
+        .controller('NavigationsCtrl', function ($scope, $http, $position) {
             $scope.auth = getAuth();
-            console.log($scope.auth);
-//            this.init($scope);
 
             $scope.NavigationsGridOptions = {
                 dataSource: {

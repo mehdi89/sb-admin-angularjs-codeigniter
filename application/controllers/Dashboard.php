@@ -25,6 +25,14 @@ class Dashboard extends MY_Controller {
 
 	public function home()
 	{
-		$this->load->view('dashboard/home');
+		if ($this->is_authentic($this->auth->RoleId, $this->user->UserId, 'Home')) {
+            $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
+            $data['read'] = $this->auth->IsRead;
+			$this->load->view('dashboard/home',  $data);
+        } else {
+            $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
+            $this->load->view('forbidden', $data);
+        }
+
 	}
 }

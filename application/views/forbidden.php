@@ -5,7 +5,7 @@
 <div class="" layout="column" style="padding-bottom: 15px;">
     <div class="row" style="padding-top: 20px">
         <div class="col-lg-12">
-            <md-toolbar class="md-whiteframe-z3">
+            <md-toolbar class="md-warn md-whiteframe-z3">
                 <div class="md-toolbar-tools">
                     <h1 class="md-flex">You Don't have permission to access this page/function</h1>
                 </div>
@@ -21,8 +21,7 @@
         <div class="row">
             <div class="col-lg-12 ">
                 <p class="md-accent">
-                    Please don't try to mess with me. Because i am recording your every single action. </br>
-                    Contact with Administrator
+                   You don't have permission to access this page. Please contact with Administrator for Info. 
                 </p>
 
             </div>
