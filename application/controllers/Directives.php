@@ -11,19 +11,7 @@ class Directives extends MY_Controller {
     }
 
     /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see http://codeigniter.com/user_guide/general/urls.html
+     * 
      */
     public function sidebar() {
         $result = $this->model->get_navigations($this->auth->RoleId, $this->user->UserId);
@@ -47,10 +35,10 @@ class Directives extends MY_Controller {
             if (is_null($item->ParentNavId)) {
                 $subMenu = $this->getSubMenu($res, $item->NavigationId);
                 if ($subMenu == "") {
-                    $menu.='<li ui-sref-active="active"><a ui-sref="dashboard.' . $item->ActionPath . '">' . $item->NavName . '</a></li>';
+                    $menu.='<li ui-sref-active="active"><a ui-sref="dashboard.' . $item->ActionPath . '"><strong>' . $item->NavName . '</strong></a></li>';
                 } else {
                     $menu .='<li ng-class="{active: collapseVar==' . $item->NavigationId . '}">{{dropDown}}
-                        <a href="" ng-click="check(' . $item->NavigationId . ')">' . $item->NavName . '<span
+                        <a href="" ng-click="check(' . $item->NavigationId . ')"><strong>' . $item->NavName . '</strong><span
                         class="fa arrow"></span></a>
 									<ul class="nav nav-second-level" collapse="collapseVar!=' . $item->NavigationId . '">
 										' . $subMenu . '
@@ -69,10 +57,10 @@ class Directives extends MY_Controller {
             if ($item->ParentNavId == $navId) {
                 $subMenu = $this->getSubMenu($list, $item->NavigationId);
                 if ($subMenu == "") {
-                    $html.='<li ui-sref-active="active"><a ui-sref="dashboard.' . $item->ActionPath . '">' . $item->NavName . '</a></li>';
+                    $html.='<li ui-sref-active="active"><a ui-sref="dashboard.' . $item->ActionPath . '"><strong>' . $item->NavName . '</strong></a></li>';
                 } else {
                     $html .='<li ng-class="{active: collapseVar==' . $item->NavigationId . '}">{{dropDown}}
-                        <a href="" ng-click="check(' . $item->NavigationId . ')">' . $item->NavName . '<span
+                        <a href="" ng-click="check(' . $item->NavigationId . ')"><strong>' . $item->NavName . '</strong><span
                         class="fa arrow"></span></a>
 									<ul class="nav nav-second-level" collapse="collapseVar!=' . $item->NavigationId . '">
 										' . $subMenu . '

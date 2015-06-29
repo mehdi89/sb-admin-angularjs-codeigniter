@@ -78,8 +78,10 @@ angular.module('ApsilonApp')
                     {field: "NavName", title: "Navigation Name"},
                     {field: "NavOrder", title: "Nav Order"},
                     {field: "ActionPath", title: "Action Path"},
-                    {field: "ParentNavId", title: "Parent Nav ID", template: function (dataItem) { return GetNavigation(dataItem.ParentNavId);}, editor: NavigationEditor},
-                    {command: ($scope.auth.update === true && $scope.auth.delete === true? ["edit", "destroy"] : []), title: "&nbsp;", width: "250px"}],
+                    {field: "ParentNavId", title: "Parent Nav ID", template: function (dataItem) {
+                            return GetNavigation(dataItem.ParentNavId);
+                        }, editor: NavigationEditor},
+                    {command: ($scope.auth.update === true && $scope.auth.delete === true ? ["edit", "destroy"] : []), title: "&nbsp;", width: "250px"}],
                 editable: "popup",
                 sortable: true,
                 filterable: {

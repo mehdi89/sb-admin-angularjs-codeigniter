@@ -7,7 +7,6 @@
  * Controller of the ApsilonApp
  */
 angular.module('ApsilonApp')
-  .controller('FormCtrl', function($scope) {
-    console.log("My Name is Mehedi"); 
-    
-});
+        .controller('FormCtrl', function ($scope) {
+
+        });

@@ -4,16 +4,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class NavigViewRight extends MY_Controller {
 
+    /**
+     * 
+     */
     function __construct() {
         parent::__construct();
     }
 
     public function index() {
+        //check in authenticated
         if ($this->is_authentic($this->auth->RoleId, $this->user->UserId, 'navigviewright')) {
+            //if yes then proceed 
             $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
             $data['read'] = $this->auth->IsRead;
             $this->load->view('NavigViewRight_view', $data);
         } else {
+            //else load permission deny page 
             $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
             $this->load->view('forbidden', $data);
         }

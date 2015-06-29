@@ -8,6 +8,6 @@
  */
 angular.module('ApsilonApp')
         .controller('ToastCtrl', function ($scope, $http, $position, $mdToast) {
-        		
+
 
         });

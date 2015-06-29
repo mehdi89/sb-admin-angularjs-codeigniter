@@ -9,7 +9,7 @@
 angular.module('ApsilonApp')
         .controller('UsersCtrl', function ($scope, $http, $position) {
             $scope.auth = getAuth();
-            
+
             $scope.UsersGridOptions = {
                 dataSource: {
                     transport: {
@@ -83,7 +83,9 @@ angular.module('ApsilonApp')
                     {field: "FirstName", title: "First Name"},
                     {field: "LastName", title: "Last Name"},
                     {field: "Email", title: "Email"},
-                    {field: "Role", title: "Role", template: function (dataItem) { return GetRole(dataItem.Role); }, editor: RoleEditor},
+                    {field: "Role", title: "Role", template: function (dataItem) {
+                            return GetRole(dataItem.Role);
+                        }, editor: RoleEditor},
 //                    {field: "NavigationId", title: "Navigation ID", template: function (dataItem) { return GetNavigation(dataItem.NavigationId); }, editor: NavigationEditor},
                     {field: "IsActive", title: "Status",
                         template: "#= IsActive == '0' ? 'Inactive' : 'Active'#",
@@ -99,9 +101,9 @@ angular.module('ApsilonApp')
                 selectable: "row",
                 resizable: true
             };
-            
+
             if ($scope.auth.insert === true) {
-                $scope.UsersGridOptions.toolbar = [{name: "create", text: "Add New User"}]; 
+                $scope.UsersGridOptions.toolbar = [{name: "create", text: "Add New User"}];
             }
 //            $http.get(BASE_URL + "users/test").success(function (response) {
 //                console.log(response);

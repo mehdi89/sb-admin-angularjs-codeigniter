@@ -38,10 +38,6 @@ class MY_Controller extends CI_Controller {
 
     protected $auth;
     protected $user;
-    /**
-     * Set subview and load layout
-     * @param string $subview
-     */
 
     protected function do_check_request($ar_call_type) {
         foreach ($ar_call_type as $str_call_type) {

@@ -4,6 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Navigations extends MY_Controller {
 
+    /**
+     * 
+     */
+    
     function __construct() {
         parent::__construct();
     }
@@ -34,11 +38,11 @@ class Navigations extends MY_Controller {
                 case 'create':
                     if ($this->auth->IsInsert) {
                         if ($request->models[0]->ParentNavId === 0) {
-                            $request->models[0]->ParentNavId = null; 
+                            $request->models[0]->ParentNavId = null;
                         };
                         $result = $result->create('navigations', $columns, $request->models, 'NavigationId');
                     } else {
-                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')];
                     }
                     break;
                 case 'read':
@@ -48,21 +52,21 @@ class Navigations extends MY_Controller {
                         if ($value['ParentNavId'] === null) {
                             $value['ParentNavId'] = 0;
                         }
-                        array_push($result['data'], $value); 
+                        array_push($result['data'], $value);
                     }
                     break;
                 case 'update':
                     if ($this->auth->IsUpdate) {
                         $result = $result->update('navigations', $columns, $request->models, 'NavigationId');
                     } else {
-                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')];
                     }
                     break;
                 case 'destroy':
                     if ($this->auth->IsDelete) {
                         $result = $result->destroy('navigations', $request->models, 'NavigationId');
-                    }  else {
-                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')] ; 
+                    } else {
+                        $result = ['status' => "error", "message" => $this->config->item('NoPermissionMsg')];
                     }
                     break;
             }

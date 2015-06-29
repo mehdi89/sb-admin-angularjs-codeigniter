@@ -1,8 +1,8 @@
 <?php
 
 class DataSourceResult {
-    protected $db;
 
+    protected $db;
     private $stringOperators = array(
         'eq' => 'LIKE',
         'neq' => 'NOT LIKE',
@@ -11,7 +11,6 @@ class DataSourceResult {
         'startswith' => 'LIKE',
         'endswith' => 'LIKE'
     );
-
     private $operators = array(
         'eq' => '=',
         'gt' => '>',
@@ -20,7 +19,6 @@ class DataSourceResult {
         'lte' => '<=',
         'neq' => '!='
     );
-
     private $aggregateFunctions = array(
         'average' => 'AVG',
         'min' => 'MIN',
@@ -29,9 +27,9 @@ class DataSourceResult {
         'sum' => 'SUM'
     );
 
-    function __construct($dsn, $username=null, $password=null, $driver_options=null) {
-//        $this->db = new PDO('mysql:host=localhost;dbname=darulirfan;charset=utf8', 'root', 'mehdihasan');
-        $this->db = new PDO('mysql:host=localhost;dbname=sb-codeigniter;charset=utf8', 'root', '');
+    function __construct($dsn, $username = null, $password = null, $driver_options = null) {
+        $this->CI = & get_instance();
+        $this->db = new PDO('mysql:host=' . $this->CI->db->hostname . ';dbname=' . $this->CI->db->database . ';charset=' . $this->CI->db->char_set, $this->CI->db->username, $this->CI->db->password);
     }
 
     private function total($tableName, $properties, $request) {
@@ -46,7 +44,7 @@ class DataSourceResult {
         $statement->execute();
 
         $total = $statement->fetch(PDO::FETCH_NUM);
-        return (int)($total[0]);
+        return (int) ($total[0]);
     }
 
     private function page() {
@@ -105,15 +103,15 @@ class DataSourceResult {
     }
 
     private function addFilterToRequest($field, $value, $request) {
-        $filter = (object)array(
-            'logic' => 'and',
-            'filters' => array(
-                (object)array(
-                    'field' => $field,
-                    'operator' => 'eq',
-                    'value' => $value
-                ))
-            );
+        $filter = (object) array(
+                    'logic' => 'and',
+                    'filters' => array(
+                        (object) array(
+                            'field' => $field,
+                            'operator' => 'eq',
+                            'value' => $value
+                        ))
+        );
 
         if (isset($request->filter)) {
             $filter->filters[] = $request->filter;
@@ -155,7 +153,7 @@ class DataSourceResult {
             for ($index = 0; $index < $count; $index++) {
                 $aggregate = $aggregates[$index];
                 $name = $this->aggregateFunctions[$aggregate->aggregate];
-                $functions[] = $name.'('.$aggregate->field.') as '.$aggregate->field.'_'.$aggregate->aggregate;
+                $functions[] = $name . '(' . $aggregate->field . ') as ' . $aggregate->field . '_' . $aggregate->aggregate;
             }
 
             $sql = sprintf('SELECT %s FROM %s', implode(', ', $functions), $table);
@@ -176,13 +174,13 @@ class DataSourceResult {
 
             return $this->convertAggregateResult($result[0]);
         }
-        return (object)array();
+        return (object) array();
     }
 
     private function convertAggregateResult($propertyNames) {
         $result = array();
 
-        foreach($propertyNames as $property => $value) {
+        foreach ($propertyNames as $property => $value) {
             $item = array();
             $split = explode('_', $property);
             $field = $split[0];
@@ -219,7 +217,6 @@ class DataSourceResult {
 
                     $order[] = "$field $dir";
                 }
-
             }
 
             $sql .= implode(',', $order);
@@ -515,8 +512,8 @@ class DataSourceResult {
         }
 
         if (isset($request->skip) && isset($request->take)) {
-            $statement->bindValue(':skip', (int)$request->skip, PDO::PARAM_INT);
-            $statement->bindValue(':take', (int)$request->take, PDO::PARAM_INT);
+            $statement->bindValue(':skip', (int) $request->skip, PDO::PARAM_INT);
+            $statement->bindValue(':take', (int) $request->take, PDO::PARAM_INT);
         }
 
         $statement->execute();
@@ -551,6 +548,7 @@ class DataSourceResult {
 
         return $result;
     }
+
 }
 
 ?>

@@ -2,27 +2,26 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends MY_Controller {
+class Products extends MY_Controller {
 
     /**
      * 
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('Users_model', 'model');
     }
 
     public function index() {
-        if ($this->is_authentic($this->auth->RoleId, $this->user->UserId, 'Users')) {
+        if ($this->is_authentic($this->auth->RoleId, $this->user->UserId, 'Products')) {
             $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
             $data['read'] = $this->auth->IsRead;
-            $this->load->view('Users_view', $data);
+            $this->load->view('Products_view', $data);
         } else {
-            $this->load->view('forbidden');
+            $data['fx'] = 'return ' . json_encode(array("insert" => $this->auth->IsInsert === "1", "update" => $this->auth->IsUpdate === "1", "delete" => $this->auth->IsDelete === "1"));
+            $this->load->view('forbidden', $data);
         }
     }
-    
-    //operation function used to perform read, create, update, delete (CRUD) operation. 
+
     public function operation() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Content-Type: application/json');
@@ -32,25 +31,25 @@ class Users extends MY_Controller {
 
             $type = $_GET['type'];
 
-            $columns = array('UserId', 'UserName', 'Password', 'FirstName', 'LastName', 'Email', 'Role', 'IsActive');
+            $columns = array('RoleId', 'RoleName', 'NavigationId', 'IsRead', 'IsInsert', 'IsUpdate', 'IsDelete');
 
             switch ($type) {
                 case 'create':
                     if ($this->auth->IsInsert) {
-                        $result = $result->create('users', $columns, $request->models, 'UserId');
+                        $result = $result->create('roles', $columns, $request->models, 'RoleId');
                     }
                     break;
                 case 'read':
-                    $result = $result->read('users', $columns, $request);
+                    $result = $result->read('roles', $columns, $request);
                     break;
                 case 'update':
                     if ($this->auth->IsUpdate) {
-                        $result = $result->update('users', $columns, $request->models, 'UserId');
+                        $result = $result->update('roles', $columns, $request->models, 'RoleId');
                     }
                     break;
                 case 'destroy':
                     if ($this->auth->IsDelete) {
-                        $result = $result->destroy('users', $request->models, 'UserId');
+                        $result = $result->destroy('roles', $request->models, 'RoleId');
                     }
                     break;
             }

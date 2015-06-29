@@ -74,10 +74,16 @@ angular.module('ApsilonApp')
                 },
                 columns: [
                     {field: "NavgViewId", title: "Nav View ID"},
-                    {field: "Navigations", title: "Navigations", template: function (dataItem) { return GetNavigation(dataItem.Navigations);}, editor: NavigationEditor},
-                    {field: "Roles", title: "Role", template: function (dataItem) { return GetRole(dataItem.Roles);}, editor: RoleEditor},
-                    {field: "Users", title: "User", template: function (dataItem) { return GetUsers(dataItem.Users);}, editor: UsersEditor},
-                    {command: ($scope.auth.update === true && $scope.auth.delete === true? ["edit", "destroy"] : []), title: "&nbsp;", width: "250px"}],
+                    {field: "Navigations", title: "Navigations", template: function (dataItem) {
+                            return GetNavigation(dataItem.Navigations);
+                        }, editor: NavigationEditor},
+                    {field: "Roles", title: "Role", template: function (dataItem) {
+                            return GetRole(dataItem.Roles);
+                        }, editor: RoleEditor},
+                    {field: "Users", title: "User", template: function (dataItem) {
+                            return GetUsers(dataItem.Users);
+                        }, editor: UsersEditor},
+                    {command: ($scope.auth.update === true && $scope.auth.delete === true ? ["edit", "destroy"] : []), title: "&nbsp;", width: "250px"}],
                 editable: "popup",
                 sortable: true,
                 filterable: {

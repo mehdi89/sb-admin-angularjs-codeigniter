@@ -15,6 +15,7 @@ function PasswordEditor(container, options)
 {
     $('<input class="k-textbox" type="password" required data-bind="value:' + options.field + '"/>').appendTo(container);
 };
+
 function RoleEditor(container, options) {
     $('<input required="required" name="Role" data-bind="value:' + options.field + '"/>')
             .appendTo(container)
