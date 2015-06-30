@@ -8,15 +8,14 @@ class MY_Controller extends CI_Controller {
     function __construct() {
         parent::__construct();
         $data = new stdClass();
-        $this->CI = & get_instance();
+        $this->CI = &get_instance();
 
-        $this->load->database();
-        $this->load->helper('url');
-
-        require_once 'application/third_party/kendo/lib/DataSourceResult.php';
-        require_once 'application/third_party/kendo/lib/kendo/Autoload.php';
-        require_once 'application/third_party/gump.class.php';
-
+        require_once 'application/third_party/lib/DataSourceResult.php';
+        //If you need validation library uncomment it and used for validation 
+        //This is a validation library 
+//        require_once 'application/third_party/gump.class.php';
+        
+      
         if ($this->session->userdata('login_state') == FALSE) {
             redirect("login");
         } else {
@@ -28,7 +27,8 @@ class MY_Controller extends CI_Controller {
     protected function post() {
         return json_decode(file_get_contents("php://input"));
     }
-
+    
+    //check is authenticate users for requested action
     protected function is_authentic($roleId, $userId, $action) {
         $query = $this->db->query("SELECT NavigationId, NavName, NavOrder,ParentNavId,ActionPath
             From navigations where NavigationId in(SELECT a.Navigations FROM navigviewright a 
@@ -39,6 +39,9 @@ class MY_Controller extends CI_Controller {
     protected $auth;
     protected $user;
 
+    //You can use do_check_request for extra security
+    //to ensure is this call valid post, get or ajax call 
+//    example : $this->do_check_request("post", "ajax"); 
     protected function do_check_request($ar_call_type) {
         foreach ($ar_call_type as $str_call_type) {
             switch (strtolower($str_call_type)) {
