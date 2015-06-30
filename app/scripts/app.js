@@ -228,15 +228,15 @@ angular
                                 }
                             }
                         })
-                        .state('dashboard.Toast', {
-                            templateUrl: 'Ui_components/Toast',
-                            url: '/Toast',
-                            controller: 'ToastCtrl',
+                        .state('dashboard.Products', {
+                            templateUrl: 'Products',
+                            url: '/Products',
+                            controller: 'ProductsCtrl',
                             resolve: {
                                 load: function ($ocLazyLoad) {
                                     return $ocLazyLoad.load({
                                         name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ui-components/ToastCtrl.js']
+                                        files: ['app/scripts/controllers/ProductsCtrl.js']
                                     });
                                 }
                             }

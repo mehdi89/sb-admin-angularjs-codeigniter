@@ -31,29 +31,28 @@ class Products extends MY_Controller {
 
             $type = $_GET['type'];
 
-            $columns = array('RoleId', 'RoleName', 'NavigationId', 'IsRead', 'IsInsert', 'IsUpdate', 'IsDelete');
+            $columns = array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued');
 
             switch ($type) {
                 case 'create':
                     if ($this->auth->IsInsert) {
-                        $result = $result->create('roles', $columns, $request->models, 'RoleId');
+                        $result = $result->create('products', $columns, $request->models, 'ProductID');
                     }
                     break;
                 case 'read':
-                    $result = $result->read('roles', $columns, $request);
+                    $result = $result->read('products', $columns, $request);
                     break;
                 case 'update':
                     if ($this->auth->IsUpdate) {
-                        $result = $result->update('roles', $columns, $request->models, 'RoleId');
+                        $result = $result->update('products', $columns, $request->models, 'ProductID');
                     }
                     break;
                 case 'destroy':
                     if ($this->auth->IsDelete) {
-                        $result = $result->destroy('roles', $request->models, 'RoleId');
+                        $result = $result->destroy('products', $request->models, 'ProductID');
                     }
                     break;
             }
-
             echo json_encode($result, JSON_NUMERIC_CHECK);
         }
     }

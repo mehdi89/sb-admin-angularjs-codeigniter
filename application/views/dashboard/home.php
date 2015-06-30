@@ -54,18 +54,6 @@
             <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Kendo test</div>
-                    <div class="panel-body">
-        <!--            <select id="customers"
-                    kendo-drop-down-list style="width: 100%"
-                    k-options="customOptions"></select>-->
-
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </md-content>
 </div>
