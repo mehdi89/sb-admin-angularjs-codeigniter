@@ -87,15 +87,11 @@ angular
                                         files: [
                                             'app/scripts/controllers/main.js',
                                             'app/scripts/directives/dashboard/stats/stats.js',
-                                            'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                                            'bower_components/angular-chart.js/dist/angular-chart.css'
+                                            'app/scripts/directives/timeline/timeline.js',
+                                            'app/scripts/directives/notifications/notifications.js',
+                                            'app/scripts/directives/chat/chat.js',
                                         ]
-                                    }),
-                                            //no need to load chart controller
-                                            $ocLazyLoad.load({
-                                                name: 'chart.js',
-                                                files: ['app/scripts/controllers/chartContoller.js']
-                                            })
+                                    })
                                 }
                             }
                         })

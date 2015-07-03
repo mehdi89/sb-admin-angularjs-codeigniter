@@ -1,5 +1,4 @@
 var all_data = $.ajax({url: BASE_URL + 'global_info/all', dataType: 'json', async: false})
-
         .success(function (result) {
             return result;
         })
@@ -9,7 +8,6 @@ var all_data = $.ajax({url: BASE_URL + 'global_info/all', dataType: 'json', asyn
 
 
 var data = JSON.parse(all_data['responseText']);
-
 
 function PasswordEditor(container, options)
 {
@@ -50,9 +48,12 @@ function NavigationEditor(container, options) {
 }
 function GetNavigation(id) {
     arr = data.navigation;
+    console.log(id);
     for (var idx = 0, length = arr.length; idx < length; idx++) {
         if (parseInt(id) === parseInt(arr[idx].value)) {
             return arr[idx].text;
+        } else if (id === null) {
+            return "N/A";
         }
     }
 }

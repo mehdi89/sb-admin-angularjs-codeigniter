@@ -6,6 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="utf-8">
         <title><?php echo $this->config->item('title'); ?></title>
+        <script>
+            var BASE_URL = "<?php echo site_url(); ?>";
+        </script>
+        <script>
+            var SRC_BASE = "<?php echo site_url(); ?>bower_components/";
+            console.log(SRC_BASE);
+        </script>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -32,9 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link rel="stylesheet" href="bower_components/kendo-ui-core/styles/kendo.material.min.css" type="text/css">
 
         <!-- endbuild -->
-        <script>
-            var BASE_URL = "<?php echo site_url(); ?>";
-        </script>
+        
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>

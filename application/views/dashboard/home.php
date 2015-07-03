@@ -21,39 +21,36 @@
         </div>
 
         <!-- /.panel -->
-        <div class="row">
-            <div class="col-lg-8 col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Bar Chart</div>
-                    <div class="panel-body">
-                        <canvas id="bar" class="chart chart-bar" data="bar.data" labels="bar.labels" series="bar.series"
-                                options="bar.options"></canvas>
-                    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
                 </div>
-                <!-- /.panel -->
+                <!-- /.panel-heading -->
+                <timeline></timeline>
+                <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-8 -->
-            <div class="col-lg-4 col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Pie Chart</div>
-                    <div class="panel-body">
-                        <canvas id="pie" class="chart chart-pie chart-xs" data="pie.data" labels="pie.labels"></canvas>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Doughnut Chart</div>
-                        <div class="panel-body">
-                            <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.panel -->
-
-            <!-- <chat></chat> -->
-                <!-- /.panel .chat-panel -->
-            </div>
-            <!-- /.col-lg-4 -->
+            <!-- /.panel -->
         </div>
-        <!-- /.row -->
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                </div>
+                <!-- /.panel-heading -->
+                <notifications></notifications> 
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+
+            <chat></chat>
+             <!-- /.panel .chat-panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
        
     </md-content>
 </div>
