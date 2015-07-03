@@ -47,13 +47,6 @@ class Navigations extends MY_Controller {
                     break;
                 case 'read':
                     $result = $result->read('navigations', $columns, $request);
-
-                    foreach ($result['data'] as $key => $value) {
-                        if ($value['ParentNavId'] === null) {
-                            $value['ParentNavId'] = 0;
-                        }
-                        array_push($result['data'], $value);
-                    }
                     break;
                 case 'update':
                     if ($this->auth->IsUpdate) {

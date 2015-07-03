@@ -75,6 +75,8 @@ function GetUsers(id) {
     for (var idx = 0, length = arr.length; idx < length; idx++) {
         if (parseInt(id) === parseInt(arr[idx].value)) {
             return arr[idx].text;
+        } else if (id === null) {
+            return "N/A";
         }
     }
 }

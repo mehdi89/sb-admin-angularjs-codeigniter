@@ -39,6 +39,9 @@ class NavigViewRight extends MY_Controller {
             switch ($type) {
                 case 'create':
                     if ($this->auth->IsInsert) {
+                        if ($request->models[0]->Users === 0) {
+                            $request->models[0]->Users = null;
+                        };
                         $result = $result->create('navigviewright', $columns, $request->models, 'NavgViewId');
                     }
                     break;
