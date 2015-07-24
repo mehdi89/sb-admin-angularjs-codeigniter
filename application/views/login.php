@@ -8,7 +8,7 @@
         <meta name="author" content="">
 
         <!-- Le styles -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="app/styles/libs/bootstrap.min.css" />
 
         <style type="text/css">
             body {
@@ -85,6 +85,6 @@
                 </div>
             </div>
         </div>
-        
+
     </body>
 </html>

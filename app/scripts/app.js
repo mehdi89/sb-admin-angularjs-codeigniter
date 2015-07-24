@@ -44,34 +44,29 @@ angular
                                             $ocLazyLoad.load(
                                                     {
                                                         name: 'toggle-switch',
-                                                        files: ["bower_components/angular-toggle-switch/angular-toggle-switch.min.js",
-                                                            "bower_components/angular-toggle-switch/angular-toggle-switch.css"
+                                                        files: ["app/js/libs/angular-toggle-switch.min.js",
+                                                            "app/styles/libs/angular-toggle-switch.css"
                                                         ]
                                                     }),
-                                            $ocLazyLoad.load(
-                                                    {
-                                                        name: 'ngAnimate',
-                                                        files: ['bower_components/angular-animate/angular-animate.js']
-                                                    })
                                     $ocLazyLoad.load(
                                             {
                                                 name: 'ngCookies',
-                                                files: ['bower_components/angular-cookies/angular-cookies.js']
+                                                files: ['app/js/libs/angular-cookies.min.js']
                                             })
                                     $ocLazyLoad.load(
                                             {
                                                 name: 'ngResource',
-                                                files: ['bower_components/angular-resource/angular-resource.js']
+                                                files: ['app/js/libs/angular-resource.min.js']
                                             })
                                     $ocLazyLoad.load(
                                             {
                                                 name: 'ngSanitize',
-                                                files: ['bower_components/angular-sanitize/angular-sanitize.js']
+                                                files: ['app/js/libs/angular-sanitize.min.js']
                                             })
                                     $ocLazyLoad.load(
                                             {
                                                 name: 'ngTouch',
-                                                files: ['bower_components/angular-touch/angular-touch.js']
+                                                files: ['app/js/libs/angular-touch.min.js']
                                             })
                                 }
                             }
@@ -109,8 +104,9 @@ angular
                                     return $ocLazyLoad.load({
                                         name: 'chart.js',
                                         files: [
-                                            'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                                            'bower_components/angular-chart.js/dist/angular-chart.css'
+                                          'app/js/libs/Chart.min.js', 
+                                            'app/js/libs/angular-chart.min.js',
+                                            'app/styles/libs/angular-chart.css'
                                         ]
                                     }),
                                             $ocLazyLoad.load({
@@ -244,5 +240,3 @@ angular
                 $mdToast.hide();
             };
         });
-
-
