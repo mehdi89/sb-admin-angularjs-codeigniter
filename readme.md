@@ -24,8 +24,8 @@ Recent changes can be viewed on Github on the [Releases Page](https://github.com
 
 ## Resources
 
--  `Codeigniter User Guide <http://www.codeigniter.com/docs>`_
--  `SB Admin 2.0 <http://startbootstrap.com/template-overviews/sb-admin-2/>`_
+-  [Codeigniter User Guide](http://www.codeigniter.com/docs)
+-  [SB Admin 2.0] (http://startbootstrap.com/template-overviews/sb-admin-2/)
 
 ## License
 
