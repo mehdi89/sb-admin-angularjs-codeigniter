@@ -1,26 +1,21 @@
-<div class="" layout="column" style="padding-bottom: 15px;">
-    <div class="row" style="padding-top: 20px">
+<div>
+    <div class="row">
         <div class="col-lg-12">
-            <md-toolbar class="md-whiteframe-z3">
-                <div class="md-toolbar-tools">
-                    <h1 class="md-flex">Dashboard</h1>
-                </div>
-            </md-toolbar>
-            <!--<hr>-->
+            <h1 class="page-header">Apsilon IT Solution</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
+    <div class="row">
 
-    <md-content class="md-whiteframe-z2" layout-padding style="padding: 20px;">
-        <div class="row">
-            <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
-            <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
-            <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
-            <stats number="24" comments="Support tickets!" colour="red" type="support"></stats>
-        </div>
+        <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
+        <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
+        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
+        <stats number="24" comments="Support tickets!" colour="red" type="support"></stats>
 
-        <!-- /.panel -->
+    </div>
+
+    <!-- /.panel -->
     <div class="row">
         <div class="col-lg-8">
             <div class="panel panel-default">
@@ -40,7 +35,7 @@
                     <i class="fa fa-bell fa-fw"></i> Notifications Panel
                 </div>
                 <!-- /.panel-heading -->
-                <notifications></notifications> 
+                <notifications></notifications>
                 <!-- /.panel-body -->
             </div>
             <!-- /.panel -->
@@ -51,6 +46,4 @@
         <!-- /.col-lg-4 -->
     </div>
     <!-- /.row -->
-       
-    </md-content>
 </div>

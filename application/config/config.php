@@ -2,8 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$config['title'] = "Apsilon APP"; 
-$config['NoPermissionMsg'] = "You are not permitted"; 
+$config['title'] = "Apsilon APP";
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -32,7 +31,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

@@ -50,4 +50,4 @@ Resources
 -  `Codeigniter User Guide <http://www.codeigniter.com/docs>`_
 -  `SB Admin 2.0 <http://startbootstrap.com/template-overviews/sb-admin-2/>`_
 
-Report any issues to `hasanmehdi89@gmail.com`, thank you.
+Report any issues to `Mehedi Hasan<mailto:hasanmehdi89@gmail.com>`_, thank you.

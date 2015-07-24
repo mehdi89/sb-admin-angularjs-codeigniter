@@ -71,10 +71,10 @@ angular
                                 }
                             }
                         })
-                        .state('dashboard.Home', {
+                        .state('dashboard.home', {
                             url: '/Home',
                             controller: 'MainCtrl',
-                            templateUrl: 'dashboard/Home',
+                            templateUrl: 'dashboard/home',
                             resolve: {
                                 loadMyFiles: function ($ocLazyLoad) {
                                     return $ocLazyLoad.load({
@@ -90,153 +90,66 @@ angular
                                 }
                             }
                         })
-                        .state('dashboard.blank', {
-                            templateUrl: 'blank',
-                            url: '/blank'
+                        .state('dashboard.form',{
+                          templateUrl:'form',
+                          url:'/form'
+                      })
+                        .state('dashboard.blank',{
+                          templateUrl:'blank',
+                          url:'/blank'
+                      })
+                        .state('login',{
+                          templateUrl:'login',
+                          url:'/login'
+                      })
+                        .state('dashboard.chart',{
+                          templateUrl:'chart',
+                          url:'/chart',
+                          controller:'ChartCtrl',
+                          resolve: {
+                            loadMyFile:function($ocLazyLoad) {
+                              return $ocLazyLoad.load({
+                                name:'chart.js',
+                                files:[
+                                  'app/js/libs/Chart.min.js',
+                                  'app/js/libs/angular-chart.min.js',
+                                  'app/styles/libs/angular-chart.css'
+                                ]
+                              }),
+                              $ocLazyLoad.load({
+                                  name:'ApsilonApp',
+                                  files:['app/scripts/controllers/chartContoller.js']
+                              })
+                            }
+                          }
+                      })
+                        .state('dashboard.table',{
+                          templateUrl:'table',
+                          url:'/table'
+                      })
+                        .state('dashboard.panels-wells',{
+                            templateUrl:'app/views/ui-elements/panels-wells.html',
+                            url:'/panels-wells'
                         })
+                        .state('dashboard.buttons',{
+                          templateUrl:'app/views/ui-elements/buttons.html',
+                          url:'/buttons'
+                      })
+                        .state('dashboard.notifications',{
+                          templateUrl:'app/views/ui-elements/notifications.html',
+                          url:'/notifications'
+                      })
+                        .state('dashboard.typography',{
+                         templateUrl:'app/views/ui-elements/typography.html',
+                         url:'/typography'
+                     })
+                        .state('dashboard.icons',{
+                         templateUrl:'app/views/ui-elements/icons.html',
+                         url:'/icons'
+                     })
+                        .state('dashboard.grid',{
+                         templateUrl:'app/views/ui-elements/grid.html',
+                         url:'/grid'
+                     })
 
-                        .state('dashboard.Chart', {
-                            templateUrl: 'Chart',
-                            url: '/Chart',
-                            controller: 'ChartCtrl',
-                            resolve: {
-                                loadMyFile: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'chart.js',
-                                        files: [
-                                          'app/js/libs/Chart.min.js', 
-                                            'app/js/libs/angular-chart.min.js',
-                                            'app/styles/libs/angular-chart.css'
-                                        ]
-                                    }),
-                                            $ocLazyLoad.load({
-                                                name: 'ApsilonApp',
-                                                files: ['app/scripts/controllers/chartContoller.js']
-                                            })
-                                }
-                            }
-                        })
-                        .state('dashboard.Users', {
-                            templateUrl: 'Users',
-                            url: '/Users',
-                            controller: 'UsersCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/UsersCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Navigations', {
-                            templateUrl: 'Navigations',
-                            url: '/Navigations',
-                            controller: 'NavigationsCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/NavigationsCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.NavigViewRight', {
-                            templateUrl: 'NavigViewRight',
-                            url: '/NavigViewRight',
-                            controller: 'NavigViewRightCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/NavigViewRightCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Roles', {
-                            templateUrl: 'Roles',
-                            url: '/Roles',
-                            controller: 'RolesCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/RolesCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Button', {
-                            templateUrl: 'Ui_components/Button',
-                            url: '/Button',
-                            controller: 'ButtonCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ui-components/ButtonCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Dialog', {
-                            templateUrl: 'Ui_components/Dialog',
-                            url: '/Dialog',
-                            controller: 'DialogCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ui-components/DialogCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Forms', {
-                            templateUrl: 'Ui_components/Forms',
-                            url: '/Forms',
-                            controller: 'FormsCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ui-components/FormsCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Tabs', {
-                            templateUrl: 'Ui_components/Tabs',
-                            url: '/Tabs',
-                            controller: 'TabsCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ui-components/TabsCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-                        .state('dashboard.Products', {
-                            templateUrl: 'Products',
-                            url: '/Products',
-                            controller: 'ProductsCtrl',
-                            resolve: {
-                                load: function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load({
-                                        name: 'ApsilonApp',
-                                        files: ['app/scripts/controllers/ProductsCtrl.js']
-                                    });
-                                }
-                            }
-                        })
-
-            }])
-        .controller('ToastCtrl', function ($scope, $mdToast) {
-            $scope.closeToast = function () {
-                $mdToast.hide();
-            };
-        });
+            }]);

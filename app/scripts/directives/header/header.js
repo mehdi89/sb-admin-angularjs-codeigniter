@@ -14,5 +14,3 @@ angular.module('ApsilonApp')
         replace: true,
     	}
 	});
-
-
