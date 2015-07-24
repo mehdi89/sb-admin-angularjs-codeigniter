@@ -14,9 +14,13 @@ Installation of this repo is so so easy just clone and browse. thats it !!
 sudo git clone https://github.com/mehdi89/sb-admin-angularjs-codeigniter.git
 ```
 
-## Contribute
+## Preview 
 
-[Mehedi Hasan](https://github.com/mehdi89/)
+![material-starter-ux2](http://startbootstrap.com/assets/img/templates/sb-admin-2.jpg)
+
+## Contributor
+
+Project owner - [Mehedi Hasan](https://github.com/mehdi89/)
 
 ## Changelog
 
