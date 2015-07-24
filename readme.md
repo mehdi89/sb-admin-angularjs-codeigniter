@@ -16,7 +16,9 @@ sudo git clone https://github.com/mehdi89/sb-admin-angularjs-codeigniter.git
 
 ## Preview 
 
-![material-starter-ux2](http://startbootstrap.com/assets/img/templates/sb-admin-2.jpg)
+![sb-admin](http://startbootstrap.com/assets/img/templates/sb-admin-2.jpg)
+<br>
+![apsilon app chart](https://drive.google.com/file/d/0B8z3QpTMP3RUWGROUUNNNlRBQjA/view?usp=drivesdk)
 
 ## Contributor
 
