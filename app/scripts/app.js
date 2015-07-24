@@ -9,11 +9,9 @@
  */
 angular
         .module('ApsilonApp', [
-            'ngMaterial',
             'oc.lazyLoad',
             'ui.router',
             'ui.bootstrap',
-            'kendo.directives',
             'angular-loading-bar',
         ])
         .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
