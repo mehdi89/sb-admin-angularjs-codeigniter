@@ -22,4 +22,34 @@ class Chart extends CI_Controller {
 	{
 		$this->load->view('chart');
 	}
+
+	public function get_accounts()
+	{
+		$query = $this->db->select('*')
+		->from('accounts')
+		->get();
+		$month = [];
+		$type = [];
+		$income = [];
+		$expend = [];
+		foreach ($query->result() as $key => $value) {
+			if (!in_array($value->month, $month)) {
+				array_push($month, $value->month);
+			}
+
+			if (!in_array($value->type, $type)) {
+				array_push($type, $value->type);
+			}
+			if ($value->type === "income") {
+				array_push($income, $value->amount);
+			} elseif ($value->type === "expend") {
+				array_push($expend, $value->amount);
+			}
+		}
+		$data['month'] = $month;
+		$data['type'] = $type;
+		$data['data'] = [0 => $income, 1 => $expend];
+
+		echo json_encode($data);
+	}
 }
