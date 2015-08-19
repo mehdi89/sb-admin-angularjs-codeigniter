@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -42,7 +43,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $autoload['packages'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
@@ -62,7 +62,6 @@ $autoload['packages'] = array();
 
 $autoload['libraries'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -78,7 +77,6 @@ $autoload['libraries'] = array();
 
 $autoload['drivers'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Helper Files
@@ -89,7 +87,6 @@ $autoload['drivers'] = array();
 */
 
 $autoload['helper'] = array('url');
-
 
 /*
 | -------------------------------------------------------------------
@@ -106,7 +103,6 @@ $autoload['helper'] = array('url');
 
 $autoload['config'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
@@ -121,7 +117,6 @@ $autoload['config'] = array();
 */
 
 $autoload['language'] = array();
-
 
 /*
 | -------------------------------------------------------------------

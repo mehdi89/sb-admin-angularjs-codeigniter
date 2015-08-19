@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!doctype html>
 <html class="no-js">
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="app/styles/libs/metisMenu.min.css">
     <link rel="stylesheet" href="app/styles/libs/loading-bar.min.css">
     <link rel="stylesheet" href="app/styles/libs/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"> -->
 
     <script src="app/js/libs/jquery.min.js"></script>
     <script src="app/js/libs/angular.min.js"></script>

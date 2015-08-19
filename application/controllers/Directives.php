@@ -1,10 +1,11 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Directives extends CI_Controller {
-
-    function __construct() {
+class Directives extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->load->helper('url');
     }
@@ -12,18 +13,18 @@ class Directives extends CI_Controller {
     /**
      *
      */
-    public function sidebar() {
-
+    public function sidebar()
+    {
         $this->load->view('directives/sidebar');
     }
 
-    public function header() {
+    public function header()
+    {
         $this->load->view('directives/header');
     }
 
-    public function stats() {
+    public function stats()
+    {
         $this->load->view('directives/stats');
     }
-
-
 }

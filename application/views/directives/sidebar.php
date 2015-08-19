@@ -49,6 +49,9 @@
                         <a href="">Second Level Item</a>
                     </li>
                     <li>
+                        <a ui-sref="dashboard.hello" href="">Hello Jony</a>
+                    </li>
+                    <li>
                         <a href="">Second Level Item</a>
                     </li>
                     <li ng-init="third=!third" ng-class="{active: multiCollapseVar==3}">
@@ -86,7 +89,7 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
-          
+
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
