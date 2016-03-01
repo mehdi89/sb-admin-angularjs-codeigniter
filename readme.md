@@ -4,6 +4,10 @@
 
 There are many starting points for building a new Angular single page app, This is a simple approach to start a project with angularjs and Codeigniter within a sec.
 
+> demo http://neomakebd.com/apsilon/login
+> username : admin
+> password : admin
+
 ## Usage
 
 For step-by-step instructions on using this repo to build a TODO AngularJS application from scratch see [this tutorial.](http://youtube.com)
